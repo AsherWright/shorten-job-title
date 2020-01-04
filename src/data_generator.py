@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 class DataGenerator:
     def __init__(self, save_path):
         self.save_path = save_path
@@ -12,11 +13,11 @@ class DataGenerator:
 
         for pre_padding in range(5):
             for _i in range(100):
-                long_title, short_title, short_title_index = get_long_short_titles(pre_padding)
-                long_titles.append(long_title)
-                short_titles.append(short_title)
-                short_title_indices.append(short_title_index)
-        
+                lt, st, sti = get_long_short_titles(pre_padding)
+                long_titles.append(lt)
+                short_titles.append(st)
+                short_title_indices.append(sti)
+
         self.long_titles = long_titles
         self.short_titles = short_titles
         self.short_title_indices = short_title_indices
@@ -29,6 +30,7 @@ class DataGenerator:
         }
 
         pd.DataFrame(data).to_csv(self.save_path, index=False)
+
 
 def get_long_short_titles(pre_padding):
     words = [
@@ -45,6 +47,7 @@ def get_long_short_titles(pre_padding):
     short_title_index = pre_padding + 2
 
     return long_title, short_title, short_title_index
+
 
 def get_prefix(pre_padding, words):
     prefix = ""
