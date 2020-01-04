@@ -1,2 +1,5 @@
 *.pyc
 *.csv
+.vscode
+data/embeddings/glove.json
+*.npy
