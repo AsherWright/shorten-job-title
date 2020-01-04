@@ -43,8 +43,8 @@ class DataFormatter:
         return output
 
     def save_data(self):
-        np.save(self.output_path + "_input", self.formatted_input_data)
-        np.save(self.output_path + "_output", self.formatted_output_data)
+        np.save(self.output_path + "_X", self.formatted_input_data)
+        np.save(self.output_path + "_y", self.formatted_output_data)
 
     def get_embedding_for_word(self, word) -> str:
         return self.embeddings[word]

@@ -6,7 +6,7 @@ from data_formatter import DataFormatter
 def format_data():
     glove_vectors = get_glove_vectors()
     simple_titles = pd.read_csv("data/simple_titles.csv")
-    output_path = "data/simple_titles_formatted"
+    output_path = "data/simple_titles"
     WORDS_PER_LONG_TITLE = 10
 
     data_formatter = DataFormatter(
