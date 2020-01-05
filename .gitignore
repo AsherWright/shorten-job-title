@@ -3,3 +3,6 @@
 .vscode
 data/embeddings/glove.json
 *.npy
+pyrightconfig.json
+*.png
+.DS_Store
