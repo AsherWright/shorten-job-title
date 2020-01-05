@@ -2,7 +2,7 @@ from data_handling.data_generator import DataGenerator
 
 
 def generate_raw_data():
-    dg = DataGenerator("data/simple_titles.csv")
+    dg = DataGenerator("data/easy_titles.csv")
     dg.generate_simple_data()
     dg.save_data()
 

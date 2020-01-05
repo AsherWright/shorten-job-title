@@ -5,12 +5,12 @@ from data_handling.seq_data_formatter import SeqDataFormatter
 
 def sequentially_format_data():
     glove_vectors = get_glove_vectors()
-    simple_titles = pd.read_csv("data/simple_titles.csv")
-    output_path = "data/simple_titles"
+    easy_titles = pd.read_csv("data/easy_titles.csv")
+    output_path = "data/easy_titles"
     WORDS_PER_LONG_TITLE = 10
 
     seq_data_formatter = SeqDataFormatter(
-        simple_titles,
+        easy_titles,
         glove_vectors,
         WORDS_PER_LONG_TITLE,
         output_path

@@ -3,10 +3,10 @@ import numpy as np
 
 
 def run_neural_network():
-    X_train = np.load("data/simple_titles_X_train.npy")
-    X_test = np.load("data/simple_titles_X_test.npy")
-    y_train = np.load("data/simple_titles_y_train.npy")
-    y_test = np.load("data/simple_titles_y_test.npy")
+    X_train = np.load("data/easy_titles_X_train.npy")
+    X_test = np.load("data/easy_titles_X_test.npy")
+    y_train = np.load("data/easy_titles_y_train.npy")
+    y_test = np.load("data/easy_titles_y_test.npy")
 
     X_train, X_test = map(lambda x: flatten_data(x), [X_train, X_test])
 
