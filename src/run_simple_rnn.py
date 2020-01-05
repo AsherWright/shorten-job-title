@@ -1,4 +1,4 @@
-from models.simple_rnn import SimpleRnn
+from pred_models.simple_rnn import SimpleRnn
 import numpy as np
 
 
