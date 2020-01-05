@@ -52,3 +52,9 @@ class SimpleRnn(Model):
 
     def get_model(self) -> Sequential:
         return self.model
+
+    def load_model(self) -> Sequential:
+        raise NotImplementedError
+
+    def save_model(self) -> None:
+        raise NotImplementedError

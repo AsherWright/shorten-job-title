@@ -54,3 +54,9 @@ class NeuralNetwork(Model):
         hln = "_hln" + str(self.hidden_layer_nodes)
 
         return base + inp + out + hl + hln
+
+    def load_model(self) -> Sequential:
+        raise NotImplementedError
+
+    def save_model(self) -> None:
+        raise NotImplementedError
