@@ -1,4 +1,4 @@
-from data_generator import DataGenerator
+from data_handling.data_generator import DataGenerator
 
 
 def generate_raw_data():

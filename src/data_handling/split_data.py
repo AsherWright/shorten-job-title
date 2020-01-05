@@ -1,4 +1,4 @@
-from data_splitter import DataSplitter
+from data_handling.data_splitter import DataSplitter
 
 
 def split_data():
