@@ -47,7 +47,7 @@ class SimpleRnn(Model):
 
         return model
 
-    def train_model(
+    def train(
         self,
         X_train,
         y_train,
@@ -64,6 +64,12 @@ class SimpleRnn(Model):
         )
 
         return history
+
+    def predict(self, new_data):
+        return self.model.predict(new_data)
+
+    def evaluate(self, X_test, y_test):
+        return self.model.evaluate(X_test, y_test)
 
     def save_model(self):
         return
