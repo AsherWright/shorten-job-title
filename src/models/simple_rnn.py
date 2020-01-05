@@ -18,12 +18,6 @@ class SimpleRnn(Model):
         self.name = self.get_model_name()
         self.model = self.load_or_create_model()
 
-    def load_or_create_model(self) -> Sequential:
-        if self.model_exists(self.name):
-            return self.load_model(self.name)
-        else:
-            return self.create_model()
-
     def create_model(self) -> Sequential:
         model = Sequential()
 
@@ -47,33 +41,6 @@ class SimpleRnn(Model):
 
         return model
 
-    def train(
-        self,
-        X_train,
-        y_train,
-        batch_size,
-        epochs,
-        validation_split
-    ):
-        history = self.model.fit(
-            X_train,
-            y_train,
-            batch_size=batch_size,
-            epochs=epochs,
-            validation_split=validation_split
-        )
-
-        return history
-
-    def predict(self, new_data):
-        return self.model.predict(new_data)
-
-    def evaluate(self, X_test, y_test):
-        return self.model.evaluate(X_test, y_test)
-
-    def save_model(self):
-        return
-
     def get_model_name(self) -> str:
         base = "simple_rnn"
         emb = "_e" + str(self.embedding_length)
@@ -82,3 +49,6 @@ class SimpleRnn(Model):
         rdp = "_rd" + str(self.r_dropout * 100)
 
         return base + emb + twc + drp + rdp
+
+    def get_model(self) -> Sequential:
+        return self.model
