@@ -1,21 +1,27 @@
+from abc import ABC, abstractmethod
 from keras.models import Model as KerasModel
 
 
-class Model():
+class Model(ABC):
+    @abstractmethod
     def get_model(self) -> KerasModel:
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def load_model(self) -> KerasModel:
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def create_model(self) -> KerasModel:
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def get_model_name(self) -> str:
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def save_model(self):
-        raise NotImplementedError
+        pass
 
     def predict(self, new_data):
         return self.get_model().predict(new_data)
