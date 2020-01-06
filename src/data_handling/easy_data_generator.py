@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 
 
-class DataGenerator:
+class EasyDataGenerator:
     def __init__(self, save_path):
         self.save_path = save_path
 
-    def generate_simple_data(self):
+    def generate_easy_data(self):
         short_titles = []
         long_titles = []
         short_title_indices = []

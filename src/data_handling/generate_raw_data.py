@@ -1,8 +1,8 @@
-from data_handling.data_generator import DataGenerator
+from data_handling.easy_data_generator import EasyDataGenerator
 
 
 def generate_raw_data():
-    dg = DataGenerator("data/easy_titles.csv")
+    dg = EasyDataGenerator("data/easy_titles.csv")
     dg.generate_simple_data()
     dg.save_data()
 
