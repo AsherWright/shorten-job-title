@@ -29,7 +29,7 @@ def get_simple_rnn_model():
 # TODO: Shouldn't need to make an entire data formatter here.
 def get_seq_data_formatter():
     glove_vectors = get_glove_vectors()
-    med_titles = pd.read_csv("data/med_titles.csv")
+    med_titles = pd.read_pickle("data/med_titles.pickle")
     output_path = "data/med_titles"
     WORDS_PER_LONG_TITLE = 10
 

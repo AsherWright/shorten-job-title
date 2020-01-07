@@ -6,3 +6,4 @@ data/embeddings/glove.json
 pyrightconfig.json
 *.png
 .DS_Store
+*.pickle

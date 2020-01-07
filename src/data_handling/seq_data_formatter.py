@@ -19,9 +19,11 @@ class SeqDataFormatter(DataFormatter):
         return fmt_long_title
 
     def format_row_output(self, row):
-        short_title_index = row['short_title_index']
+        short_title_indices = row['short_title_indices']
 
         output = np.zeros(self.title_word_count)
-        output[short_title_index] = 1
+
+        for short_title_index in short_title_indices:
+            output[short_title_index] = 1
 
         return output

@@ -16,7 +16,7 @@ class EasyDataGenerator:
                 lt, st, sti = get_long_short_titles(pre_padding)
                 long_titles.append(lt)
                 short_titles.append(st)
-                short_title_indices.append(sti)
+                short_title_indices.append([sti])
 
         self.long_titles = long_titles
         self.short_titles = short_titles
@@ -26,10 +26,10 @@ class EasyDataGenerator:
         data = {
             'long_title': self.long_titles,
             'short_title': self.short_titles,
-            'short_title_index': self.short_title_indices
+            'short_title_indices': self.short_title_indices
         }
 
-        pd.DataFrame(data).to_csv(self.save_path, index=False)
+        pd.DataFrame(data).to_pickle(self.save_path)
 
 
 def get_long_short_titles(pre_padding):
