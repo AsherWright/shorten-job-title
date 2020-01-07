@@ -3,13 +3,13 @@ import numpy as np
 
 
 def run_simple_rnn():
-    X_train = np.load("data/easy_titles_X_train.npy")
-    X_test = np.load("data/easy_titles_X_test.npy")
-    y_train = np.load("data/easy_titles_y_train.npy")
-    y_test = np.load("data/easy_titles_y_test.npy")
+    X_train = np.load("data/hard_titles_X_train.npy")
+    X_test = np.load("data/hard_titles_X_test.npy")
+    y_train = np.load("data/hard_titles_y_train.npy")
+    y_test = np.load("data/hard_titles_y_test.npy")
 
     simple_rnn = SimpleRnn(50, 10, 0.1, 0.1)
-    simple_rnn.train(X_train, y_train, 100, 50, 0.3)
+    simple_rnn.train(X_train, y_train, 100, 500, 0.2)
 
     print(X_test[0])
     print(simple_rnn.predict(X_test[0].reshape(1, 10, 50)))

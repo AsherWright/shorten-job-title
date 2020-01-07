@@ -9,7 +9,7 @@ from data_handling.seq_data_formatter import SeqDataFormatter
 def guess_short_title():
     model = get_simple_rnn_model()
     data_formatter = get_seq_data_formatter()
-    long_title = "sales sales head of marketing sales sales"
+    long_title = "sales sales super head of finance marketing sales"
 
     stg = ShortTitleGuesser(model, data_formatter)
     print(stg.guess_short_title(long_title))
@@ -17,8 +17,8 @@ def guess_short_title():
 
 # TODO: Should instead load an existing model
 def get_simple_rnn_model():
-    X_train = np.load("data/med_titles_X_train.npy")
-    y_train = np.load("data/med_titles_y_train.npy")
+    X_train = np.load("data/hard_titles_X_train.npy")
+    y_train = np.load("data/hard_titles_y_train.npy")
 
     simple_rnn = SimpleRnn(50, 10, 0.1, 0.1)
     simple_rnn.train(X_train, y_train, 100, 50, 0.3)
@@ -29,12 +29,12 @@ def get_simple_rnn_model():
 # TODO: Shouldn't need to make an entire data formatter here.
 def get_seq_data_formatter():
     glove_vectors = get_glove_vectors()
-    med_titles = pd.read_pickle("data/med_titles.pickle")
-    output_path = "data/med_titles"
+    titles = pd.read_pickle("data/hard_titles.pickle")
+    output_path = "data/hard_titles"
     WORDS_PER_LONG_TITLE = 10
 
     return SeqDataFormatter(
-        med_titles,
+        titles,
         glove_vectors,
         WORDS_PER_LONG_TITLE,
         output_path

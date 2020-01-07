@@ -13,7 +13,9 @@ class ShortTitleGuesser:
         x = np.array(x)
         x = x.reshape((1, x.shape[0], x.shape[1]))
 
-        preds = np.round(self.model.predict(x))[0]
+        preds = self.model.predict(x)
+        print(preds)
+        preds = np.round(preds)[0]
         print(preds)
         words = long_title.split(" ")
 
