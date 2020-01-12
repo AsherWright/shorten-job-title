@@ -11,7 +11,7 @@ def run_neural_network():
     X_train, X_test = map(lambda x: flatten_data(x), [X_train, X_test])
 
     neural_net = NeuralNetwork(500, 10, 2, 20)
-    neural_net.train(X_train, y_train, 100, 50, 0.3)
+    neural_net.train(X_train, y_train, 50, 200, 0.3)
 
     print(X_test[0])
     print(neural_net.predict(X_test[0].reshape(1, 500)))

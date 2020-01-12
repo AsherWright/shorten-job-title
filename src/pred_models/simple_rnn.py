@@ -30,7 +30,6 @@ class SimpleRnn(Model):
             )
         )
 
-        # output layer (is this cheating?)
         model.add(Dense(self.title_word_count, activation='softmax'))
 
         model.compile(
